@@ -16,3 +16,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --area-porta-altura: 310px;
+  --area-porta-largura: 200px;
+
+  --largura-macaneta: 20px;
+  --altura-macaneta: 20px;
+}
