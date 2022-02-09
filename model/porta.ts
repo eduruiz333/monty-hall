@@ -1,10 +1,10 @@
-export default class Porta {
-    #numero
-    #temPresente
-    #selecionada
-    #aberta
+export default class PortaModel {
+    #numero: number
+    #temPresente: boolean
+    #selecionada: boolean
+    #aberta: boolean
 
-    constructor(numero, temPresente = false, selecionada = false, aberta = false) {
+    constructor(numero: number, temPresente = false, selecionada = false, aberta = false) {
         this.#numero = numero
         this.#temPresente = temPresente
         this.#selecionada = selecionada
@@ -22,6 +22,24 @@ export default class Porta {
     }
     get aberta() {
         return this.#aberta
+    }
+
+    tirarSelecao() {
+        const selecionada = false
+        return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
+    }
+
+    alternarSelecao() {
+        // Para fazer um toogle, podemos utilizar esse esquema de negação
+        const selecionada = !this.selecionada
+        // A linha acima, está acessando o MÉTODO (função) selecionada, e não o atributo privado
+        // Também daria para acessar o atributo diretamente, utilizando this.#selecionada
+        return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
+    }
+
+    abrir() {
+        const aberta = true
+        return new PortaModel(this.numero, this.temPresente, this.selecionada, aberta)
     }
 }
 
