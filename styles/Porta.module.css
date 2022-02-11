@@ -13,6 +13,7 @@
     flex-grow: 1;
     border: solid 5px brown;
     border-bottom: 0;
+    background-color: #0005; /* quando se usa 3 números, o quarto número aplica a transparência */
     width: 90%;
 }
 
